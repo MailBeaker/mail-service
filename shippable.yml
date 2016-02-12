@@ -1,0 +1,33 @@
+# Language
+language: python
+
+# Versions
+python:
+  - 3.4
+
+# extra services the app relies on
+# services:
+#   - mongodb
+
+env:
+  - BEAKER_API_USERNAME=test BEAKER_API_PASSWORD=test
+
+# Setup
+install:
+  - sudo apt-get install python-dev libffi-dev libssl-dev git
+  - pip install -r requirements.txt
+
+# Preparation for the script below
+# make folders for the reports
+before_script:
+  - mkdir -p shippable/testresults
+  - mkdir -p shippable/codecoverage
+  - cp mail_service/settingslocal.py.dev mail_service/settingslocal.py
+
+# commands to run tests
+script:
+  - nosetests --with-xunit --xunit-file=shippable/testresults/nosetests.xml --with-coverage --cover-package=./gmail_service --cover-xml --cover-xml-file=shippable/codecoverage/coverage.xml --cover-branches
+
+# After a successful build
+# after_success:
+

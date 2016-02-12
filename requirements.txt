@@ -1,0 +1,12 @@
+git+https://github.com/MailBeaker/mailbeaker-sdk.git
+google-api-python-client==1.4.1
+boto==2.32.1
+cryptography==0.9
+authres==0.800
+beautifulsoup4==4.3.2
+coverage==3.7.1
+pyOpenSSL==0.14
+celery==3.1.15
+python-json-logger==0.1.2
+newrelic
+splunk_handler==1.1.3

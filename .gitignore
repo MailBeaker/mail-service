@@ -1,0 +1,9 @@
+settingslocal.py
+sdk_settingslocal.py
+*.py[cod]
+*.pid
+*.idea
+dist/*
+mail_service.egg-info/*
+MANIFEST
+shippable/

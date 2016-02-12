@@ -1,0 +1,10 @@
+from mail_service import settings
+
+BROKER_TRANSPORT = 'sqs'
+BROKER_TRANSPORT_OPTIONS = {
+    'region': 'us-east-1',
+}
+BROKER_USER = settings.AWS_ACCESS_KEY_ID
+BROKER_PASSWORD = settings.AWS_SECRET_ACCESS_KEY
+CELERYD_HIJACK_ROOT_LOGGER = False
+CELERY_REDIRECT_STDOUTS = False
